@@ -32,7 +32,31 @@ class LinkedList {
     }
     this.size++
   }
-
+  
+  addAt(element: any, index: number) {
+    if (index < 0 || index > this.size) {
+      return 'Invalid Index Position'
+    }
+    let newNode = new ListNode(element)
+    let curr, prev
+    curr = this.head
+    if (index === 0) {
+      newNode.next = this.head
+      this.head = newNode
+    } else {
+      let i: number = 0
+      curr = this.head
+      while(i < index) {
+        i++
+        prev = curr
+        curr = curr!.next
+      }
+      newNode.next = curr
+      prev.next = newNode
+    }
+    this.size++
+  }
+  
   removeAt() {}
 
   getSize() {}
@@ -49,6 +73,7 @@ class LinkedList {
 const linkedList = new LinkedList()
 linkedList.add(1)
 linkedList.add(2)
+linkedList.addAt(5, 1)
 linkedList.add(3)
 linkedList.add(4)
 linkedList.add(6)
