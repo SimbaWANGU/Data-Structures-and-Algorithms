@@ -6,11 +6,10 @@ function subArrayDivision(s, d, m) {
     for (i; i < s.length; i++) {
         for (j = i; j < j + m; j++) {
             sum += s[j];
-            if (sum === d) {
-                division += 1;
-            }
         }
-        sum = 0;
+        if (sum === d) {
+            division += 1;
+        }
     }
     return division;
 }
