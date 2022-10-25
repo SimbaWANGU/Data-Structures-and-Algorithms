@@ -1,0 +1,23 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "A repository containing all the data structures and algorithms I have been able to learn so far",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimbaWANGU/Data-Structures-and-Algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimbaWANGU/Data-Structures-and-Algorithms/issues"
+  },
+  "homepage": "https://github.com/SimbaWANGU/Data-Structures-and-Algorithms#readme",
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
+}
