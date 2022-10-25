@@ -49,7 +49,6 @@ class LinkedList {
         }
         this.size++;
     }
-    removeAt() { }
     getSize() {
         return this.size;
     }
@@ -77,8 +76,6 @@ class LinkedList {
         }
         this.size--;
     }
-    indexOf() { }
-    elementAt() { }
 }
 const linkedList = new LinkedList();
 linkedList.add(1);
