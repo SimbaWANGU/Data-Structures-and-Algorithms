@@ -56,18 +56,35 @@ class LinkedList {
     }
     this.size++
   }
-  
-  removeAt() {}
 
-  getSize() {}
-  getHead() {}
+  getSize():number {
+    return this.size
+  }
+
+  getHead() {
+    return JSON.stringify({
+      element: this.head?.element,
+      next: this.head?.next
+    })
+  }
 
 
-  remove() {}
-  indexOf() {}
-  elementAt() {}
-  
-
+  remove(element: any) {
+    let curr
+    let prev;
+    curr = this.head
+    let i = 0
+    if (curr?.element === element) {
+      this.head = curr?.next
+    } else {
+      while (curr?.element !== element) {
+        prev = curr
+        curr = curr?.next
+      }
+      prev.next = curr?.next
+    }
+    this.size--
+  }
 }
 
 const linkedList = new LinkedList()
@@ -77,6 +94,9 @@ linkedList.addAt(5, 1)
 linkedList.add(3)
 linkedList.add(4)
 linkedList.add(6)
+linkedList.remove(1)
 console.log(linkedList)
+console.log('Size of the list is ' + linkedList.getSize())
+console.log('Head of the list is ' + linkedList.getHead())
 console.log(linkedList!.head!.next!.next.next!)
 
