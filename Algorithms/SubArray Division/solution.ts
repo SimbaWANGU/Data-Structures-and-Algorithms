@@ -1,13 +1,16 @@
 function subArrayDivision(s: number[], d: number, m: number): number {
   let division = 0
-  let j, i = 0 
-  let sum = 0
+  let  i = 0 
+  let j: number
+  let condition: boolean
   for(i; i < s.length; i++) {
-    for(j = i; j < j + m; j++) {
+    let sum = 0
+    for(j = i; j < s.length; j++) {
       sum += s[j]
+      if (j - i === m - 1) { break }
     }
-    if(sum === d) {
-      division += 1
+    if (sum === d) {
+      division ++
     }
   }
 

@@ -1,18 +1,23 @@
 "use strict";
 function subArrayDivision(s, d, m) {
     let division = 0;
-    let j, i = 0;
-    let sum = 0;
+    let i = 0;
+    let j;
+    let condition;
     for (i; i < s.length; i++) {
-        for (j = i; j < j + m; j++) {
+        let sum = 0;
+        for (j = i; j < s.length; j++) {
             sum += s[j];
+            if (j - i === m - 1) {
+                break;
+            }
         }
         if (sum === d) {
-            division += 1;
+            division++;
         }
     }
     return division;
 }
 console.log(subArrayDivision([1, 2, 1, 3, 2], 3, 2)); //=> 2
-//console.log(subArrayDivision([1,1,1,1,1,1], 3, 2)) //=> 0
-//console.log(subArrayDivision([4], 4, 1)) //=> 1
+console.log(subArrayDivision([1, 1, 1, 1, 1, 1], 3, 2)); //=> 0
+console.log(subArrayDivision([4], 4, 1)); //=> 1
