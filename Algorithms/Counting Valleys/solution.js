@@ -1,7 +1,7 @@
 "use strict";
 function countingValleys(steps) {
     let i = 0;
-    let prevPosition = 0;
+    let prevPosition;
     let currPosition = 0;
     let valley = 0;
     const seaLevel = 0;
